@@ -23,7 +23,8 @@ class Ball(Turtle):
         self.xmove *= -1
 
     def increase_speed(self):
-        self.xmove += 3
+        self.xmove += 2
+        self.ymove += 2
 
     def reset_position(self):
         self.xmove *= -1

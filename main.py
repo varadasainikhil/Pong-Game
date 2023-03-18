@@ -38,6 +38,8 @@ while game_is_on:
     if l_player_misses == 5:
         game_over_text.game_over("P2")
         game_is_on = False
+    if (l_player_score_text.score + r_player_score_text.score) % 3 == 0 and l_player_score_text.score != 0:
+        ball.increase_speed()
     if ball.ycor() > 230 or ball.ycor() < -230:
         ball.bounce_with_wall()
     if ball.xcor() > 330 and right_y_lower_limit < ball.ycor() < right_y_upper_limit:
