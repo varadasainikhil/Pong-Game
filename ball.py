@@ -22,4 +22,9 @@ class Ball(Turtle):
     def bounce_with_paddle(self):
         self.xmove *= -1
 
+    def increase_speed(self):
+        self.xmove += 3
 
+    def reset_position(self):
+        self.xmove *= -1
+        self.goto(0, self.ycor())
