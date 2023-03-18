@@ -23,5 +23,15 @@ game_is_on = True
 while game_is_on:
     time.sleep(0.1)
     ball.move()
+    if ball.ycor() > 230 or ball.ycor() < -230 :
+        ball.bounce_with_wall()
+    left_y_upper_limit = left_paddle.ycor() + 50
+    left_y_lower_limit = left_paddle.ycor() - 50
+    right_y_upper_limit = right_paddle.ycor() + 50
+    right_y_lower_limit = right_paddle.ycor() - 50
+    if ball.xcor() > 330 and right_y_lower_limit < ball.ycor() < right_y_upper_limit:
+        ball.bounce_with_paddle()
+    if ball.xcor() < -330 and left_y_lower_limit < ball.ycor() < left_y_upper_limit:
+        ball.bounce_with_paddle()
     screen.update()
 screen.exitonclick()
